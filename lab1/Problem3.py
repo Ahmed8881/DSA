@@ -10,7 +10,8 @@ def Minimum(Arr,start,End):
     
 
         
-Array= [3,4,7,8,0,1,23,-2,-5] 
-StartingIndex= 4 
-EndingIndex= 7 
+# Array= [3,4,7,8,0,1,23,-2,-5] 
+Array=[-5, 4, 7, 8, 0, 1, 23, -2, 3]
+StartingIndex= 1
+EndingIndex= 8
 print(Minimum(Array,StartingIndex,EndingIndex))
