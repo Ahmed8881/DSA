@@ -8,7 +8,7 @@ def ColumnWiseSum(matrix):
     for i in range(0,len(matrix)):
         sum=0
         for j in range(0,len(matrix)):
-            sum+=matrix[i][j]
+            sum+=matrix[j][i]
         arr.append(sum)
     return arr
 
@@ -17,7 +17,7 @@ def RowWiseSum(matrix):
     for i in range(len(matrix)):
         sum=0
         for j in range (len(matrix)):
-            sum+=matrix[j][i]
+            sum+=matrix[i][j]
         arr.append(sum)
     return arr
             
