@@ -28,17 +28,15 @@ def Minimum(Arr,start,End):
     return min
 
 
-Array= [0,5,4,2,6,7,8,9,1] 
+Array=[5, 4, 3, 2, 1]
 StartingIndex= 0
-EndingIndex= 8
+EndingIndex= len(Array) - 1
 for i in range(len(Array)):
-    a=Minimum(Array,StartingIndex,EndingIndex)
-    b=Array[i]
-    Array[i]=Array[a]
-    Array[a]=b
-    # Array.pop(a)
-    # Array.append(b)
-    StartingIndex=StartingIndex+1
+    a = Minimum(Array, StartingIndex, EndingIndex)
+    b = Array[i]
+    Array[i] = Array[a]
+    Array[a] = b
+    StartingIndex += 1
 print(Array)
     
     

@@ -19,27 +19,28 @@ def SearchIndex(arr,x):
 
 
 # Problem 3
-def Minimum(Arr,start,End):
-    min=start
-    for i in range(start,End+1):
-        if(Arr[min]>Arr[i]):
-            min=i
+def Minimum(Arr, start, End):
+    min = start
+    for i in range(start, End + 1):
+        if Arr[min] > Arr[i]:
+            min = i
     return min
+
 # Problem 4
 def Sort(Arr):
-    StartingIndex= 0
-    EndingIndex= 8
-    for i in range(len(Arr)-1):
-        a=Minimum(Arr,StartingIndex,EndingIndex)
-        b=Arr[i]
-        Arr[i]=Arr[a]
-        Arr[a]=b
-        StartingIndex=StartingIndex+1
+    StartingIndex = 0
+    EndingIndex = len(Arr) - 1  # Adjust the range here
+    for i in range(EndingIndex):  # Adjust the range here
+        a = Minimum(Arr, StartingIndex, EndingIndex)
+        b = Arr[i]
+        Arr[i] = Arr[a]
+        Arr[a] = b
+        StartingIndex = StartingIndex + 1
     return Arr
 
 # Problem 5
-def StringReverse(str,starting,ending):
-    return str[starting:ending:-1]
+def StringReverse(str, starting, ending):
+    return str[starting:ending][::-1] 
 # Problem 6
 def SumIteratice(number):
     sum=0
