@@ -38,7 +38,7 @@ def SortedMerge(Arr1, Arr2) :
         Arr1[a]=b
         StartingIndex=StartingIndex+1
     return Arr1
-A = [0,3,4,10,11] 
+A = [0,3,4,-8,-8,10,11] 
 B = [1,8,13,24] 
 print(SortedMerge(A,B))
 

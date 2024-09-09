@@ -30,7 +30,7 @@ def Sort10(Arr):
         else:
             negative.append(Arr[i])
     
-    for i in range(max(len(positive), len(negative))):
+    for i in range(len(Arr)):
         if i < len(negative):
             sortedArray.append(negative[i])
         if i < len(positive):
@@ -38,5 +38,5 @@ def Sort10(Arr):
     
     return sortedArray
 
-Arr= [10, -1, 9, 20, -3, -8, 22, 9, 7] 
+Arr= [-1,-2,-3,-4,-5,1,2,3,4,5] 
 print(Sort10(Arr))
