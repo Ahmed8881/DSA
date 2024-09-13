@@ -1,0 +1,27 @@
+import funcs 
+import time
+
+def InsertionSort(array, start, end):
+    for i in range(start, end+1):
+        check = array[i]
+        j = i - 1
+        while j >= start and array[j] > check:
+            array[j + 1] = array[j]
+            j = j - 1
+        array[j + 1] = check
+    return array
+
+if __name__ == "__main__":
+    n=10
+    array=funcs.RandomArray(n)
+    start_time=time.perf_counter()
+    new=InsertionSort(array,1,7)
+    end_time=time.perf_counter()
+    print(funcs.isSorted(new,1,7))
+    run_time=end_time-start_time
+    print(run_time)
+    print(new)
+
+
+    
+    

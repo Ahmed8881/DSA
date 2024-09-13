@@ -1,0 +1,18 @@
+import funcs
+import time
+def SelectionSort(array,start,end):
+    for i in range(start,end):
+        minimum=i
+        for j in range(i+1,end):
+            if(array[j]<array[minimum]):
+                minimum=j
+        array[i],array[minimum]=array[minimum],array[i]
+    return array
+n=30000
+array=funcs.RandomArray(n)
+start_time=time.perf_counter()
+new=SelectionSort(array,0,n)
+end_time=time.perf_counter()
+run_time=end_time-start_time
+print("Run time of SelectionSort at", n,"is",run_time,"seconds")
+ 
