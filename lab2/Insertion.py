@@ -12,12 +12,12 @@ def InsertionSort(array, start, end):
     return array
 
 if __name__ == "__main__":
-    n=10
+    n=30000
     array=funcs.RandomArray(n)
     start_time=time.perf_counter()
-    new=InsertionSort(array,1,7)
+    new=InsertionSort(array,1,n-1)
     end_time=time.perf_counter()
-    print(funcs.isSorted(new,1,7))
+    print(funcs.isSorted(new,1,n-1))
     run_time=end_time-start_time
     print(run_time)
     print(new)
