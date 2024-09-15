@@ -1,5 +1,7 @@
 import csv
 from random import randint
+import random
+
 import numpy as np
 
 #Function to Find Factorial
@@ -91,9 +93,6 @@ def ReadWords(filename):
     return words 
 
  
-#Function to  Shuffle Array
+#Function to Shuffle Array
 def ShuffleArray(array, start, end):
-
-    for i in range(end, start, -1):
-        j = np.random.randint(start, i)
-        array[i], array[j] = array[j], array[i]
+    random.shuffle(array[start:end+1])
