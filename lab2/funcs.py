@@ -1,13 +1,15 @@
-
 import csv
 from random import randint
+import numpy as np
+
+#Function to Generate Random Numbers
 def RandomArray(size):
    return [randint(-15000, 15000) for i in range(size)]
 
 def isSorted(array,Start,End):
     return all(array[i] <= array[i+1] for i in range(Start,End-1))
 
-
+#Function to read File
 def ReadFile(filename):
     f = open(file = filename , mode = 'r')
     lines = f.read()
@@ -17,9 +19,9 @@ def ReadFile(filename):
         num = int(s)
         numbers.append(num)
     return numbers
- 
-def Merge(array, p, q, r):
-    
+
+#Function to Merge array
+def Merge(array, p, q, r):  
     Left = q - p + 1 
     Right = r - q
     
@@ -55,16 +57,23 @@ def Merge(array, p, q, r):
         j+=1
         k+=1
 
+
+#Function to Write in tabular form
 def WriteFile(filename, array):
     with open(filename, mode="w", newline="") as file:
         writer = csv.writer(file)
         for row in array:
             writer.writerow(row)
+ 
+            
+#Function to Write in File
 def WriteFiles(filename, arr):
     f = open(file = filename , mode = 'w')
     for i in arr:
         f.write(str(i) + "\n")           
 
+
+#Function to Read words from file
 def ReadWords(filename):
     f = open(file = filename , mode = 'r')
     lines = f.read()
@@ -72,8 +81,12 @@ def ReadWords(filename):
     arr = lines.split()
     for s in arr:
         words.append(s)
-    return words  
+    return words 
+
+ 
+#Function to  Shuffle Array
 def ShuffleArray(array, start, end):
-    for i in (end, start, -1):
-        j = randint(start, i)
+
+    for i in range(end, start, -1):
+        j = np.random.randint(start, i)
         array[i], array[j] = array[j], array[i]

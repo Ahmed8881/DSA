@@ -1,6 +1,7 @@
 import funcs
 import time
-import Insertion
+import Insertion as IS
+
 
 def HybridMerge(array, start, end):
     mid = start + (end-start) // 2
@@ -8,14 +9,14 @@ def HybridMerge(array, start, end):
         return array
     if start < end:
         if end - start < 16:
-            Insertion.InsertionSort(array, start, end)
+           IS.InsertionSort(array, start, end)
         else:
             HybridMerge(array, start, mid)
             HybridMerge(array, mid + 1, end)
-            funcs.Merge(array, start, mid, end)
+        funcs.Merge(array, start, mid, end)
             
 if __name__ == "__main__":
-    n=990
+    n=30000
     array = funcs.RandomArray(n)
     start = time.perf_counter()
     HybridMerge(array, 0, n-1)

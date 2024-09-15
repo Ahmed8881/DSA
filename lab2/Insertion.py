@@ -15,12 +15,11 @@ if __name__ == "__main__":
     n=30000
     array=funcs.RandomArray(n)
     start_time=time.perf_counter()
-    new=InsertionSort(array,1,n-1)
+    new=InsertionSort(array,0,n)
     end_time=time.perf_counter()
-    print(funcs.isSorted(new,1,n-1))
     run_time=end_time-start_time
-    print(run_time)
-    print(new)
+    print(funcs.isSorted(new,0,n))
+    funcs.WriteFiles(" SortedInsertionSort.csv", new)  
 
 
     

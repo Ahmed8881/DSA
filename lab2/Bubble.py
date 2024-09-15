@@ -12,9 +12,9 @@ if __name__=="__main__":
     n = 30000
     array = funcs.RandomArray(n)
     start_time=time.perf_counter()
-    new_array=BubbleSort(array,0,10)
+    new_array=BubbleSort(array,0,n)
     end_time=time.perf_counter()
     run_time=end_time-start_time
-    funcs.WriteFile("SortedBubbleSort.csv", new_array)  
-    print(funcs.isSorted(new_array,0,30000))
+    funcs.WriteFiles("SortedBubbleSort.csv", new_array)  
+    print(funcs.isSorted(new_array,0,n))
     print("Run time of BubbleSort at", n,"is",run_time,"seconds")

@@ -18,4 +18,5 @@ if __name__=="__main__":
     run_time=end_time-start_time
     print("Run time of SelectionSort at", n,"is",run_time,"seconds")
     print(funcs.isSorted(array,0,n))
- 
+    funcs.WriteFiles(" SortedSelectionSort.csv", new)  
+    
