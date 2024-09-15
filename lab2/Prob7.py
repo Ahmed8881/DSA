@@ -35,7 +35,7 @@ def Calculate_Run_Time():
         # Hybrid Merge Sort
         array = funcs.RandomArray(i)  # Pass 'i' (integer) instead of 'n' (list)
         start_time = time.time()
-        HM.HybridMerge(array, 0, i-1)
+        HM.HybridMergeSort(array, 0, i-1)
         end_time = time.time()
         run_time = end_time - start_time
         line.append(run_time)
