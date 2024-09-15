@@ -57,7 +57,7 @@ def Calculate_Run_Time():
         line.append(run_time)
         
         Results.append(line)
-        funcs.WriteFile("Results.txt", Results)
+        funcs.WriteFile("RunTime.csv", Results)
 
 if __name__ == "__main__":
     Calculate_Run_Time()
