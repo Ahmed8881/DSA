@@ -1,11 +1,23 @@
 
+import csv
 from random import randint
 def RandomArray(size):
-   return [randint(-15000,15000) for _ in range(size)]
+   return [randint(-15000, 15000) for i in range(size)]
 
 def isSorted(array,Start,End):
     return all(array[i] <= array[i+1] for i in range(Start,End-1))
 
+
+def ReadFile(filename):
+    f = open(file = filename , mode = 'r')
+    lines = f.read()
+    numbers = []
+    arr = lines.split()
+    for s in arr:
+        num = int(s)
+        numbers.append(num)
+    return numbers
+ 
 def Merge(array, p, q, r):
     
     Left = q - p + 1 
@@ -42,3 +54,21 @@ def Merge(array, p, q, r):
         array[k] = R[j]
         j+=1
         k+=1
+
+def WriteFile(filename, array):
+    with open(filename, mode="w", newline="") as file:
+        writer = csv.writer(file)
+        for row in array:
+            writer.writerow(row)
+def ReadWords(filename):
+    f = open(file = filename , mode = 'r')
+    lines = f.read()
+    words = []
+    arr = lines.split()
+    for s in arr:
+        words.append(s)
+    return words  
+def ShuffleArray(array, start, end):
+    for i in (end, start, -1):
+        j = randint(start, i)
+        array[i], array[j] = array[j], array[i]

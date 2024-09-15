@@ -9,12 +9,13 @@ def SelectionSort(array,start,end):
         array[i],array[minimum]=array[minimum],array[i]
     return array
 # Driver Code
-n=30000
-array=funcs.RandomArray(n)
-start_time=time.perf_counter()
-new=SelectionSort(array,0,n)
-end_time=time.perf_counter()
-run_time=end_time-start_time
-print("Run time of SelectionSort at", n,"is",run_time,"seconds")
-print(funcs.isSorted(array,0,n))
+if __name__=="__main__":
+    n=30000
+    array=funcs.RandomArray(n)
+    start_time=time.perf_counter()
+    new=SelectionSort(array,0,n)
+    end_time=time.perf_counter()
+    run_time=end_time-start_time
+    print("Run time of SelectionSort at", n,"is",run_time,"seconds")
+    print(funcs.isSorted(array,0,n))
  
