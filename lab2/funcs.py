@@ -60,6 +60,11 @@ def WriteFile(filename, array):
         writer = csv.writer(file)
         for row in array:
             writer.writerow(row)
+def WriteFiles(filename, arr):
+    f = open(file = filename , mode = 'w')
+    for i in arr:
+        f.write(str(i) + "\n")           
+
 def ReadWords(filename):
     f = open(file = filename , mode = 'r')
     lines = f.read()
