@@ -1,6 +1,7 @@
 import funcs
 import time
 
+# Sort Function
 def BubbleSort(array,start,end):
     for i in range(start,end-1):
         for j in range(start,end-1-i):

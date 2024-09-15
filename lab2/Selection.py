@@ -1,5 +1,8 @@
 import funcs
 import time
+
+
+# Sort Function
 def SelectionSort(array,start,end):
     for i in range(start,end):
         minimum=i
@@ -8,6 +11,9 @@ def SelectionSort(array,start,end):
                 minimum=j
         array[i],array[minimum]=array[minimum],array[i]
     return array
+
+
+
 # Driver Code
 if __name__=="__main__":
     n=30000

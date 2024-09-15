@@ -2,6 +2,13 @@ import csv
 from random import randint
 import numpy as np
 
+#Function to Find Factorial
+def factorial(n):
+    if(n==0):
+        return 1
+    else:
+        return n* factorial(n-1)
+
 #Function to Generate Random Numbers
 def RandomArray(size):
    return [randint(-15000, 15000) for i in range(size)]

@@ -1,6 +1,8 @@
 import funcs 
 import time
 
+# Sort Function
+
 def InsertionSort(array, start, end):
     for i in range(start+1,end,1):
         check = array[i]

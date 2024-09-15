@@ -1,6 +1,8 @@
 import funcs
 import time
 
+# Sort Function
+
 def MergeSort(array, start, end):
     mid = start + (end-start) // 2
     if len(array) == 1:
