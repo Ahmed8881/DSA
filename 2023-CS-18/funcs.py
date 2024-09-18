@@ -15,9 +15,6 @@ def factorial(n):
 def RandomArray(size):
    return [randint(-15000, 15000) for i in range(size)]
 
-def isSorted(array,Start,End):
-    return all(array[i] <= array[i+1] for i in range(Start,End-1))
-
 #Function to read File
 def ReadFile(filename):
     f = open(file = filename , mode = 'r')
