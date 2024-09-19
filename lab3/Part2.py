@@ -24,3 +24,4 @@ plt.show()
 #     plt.xlabel(i)
 #     plt.ylabel('Disease Label')
 #     plt.show()
+

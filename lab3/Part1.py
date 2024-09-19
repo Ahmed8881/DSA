@@ -46,3 +46,24 @@ import pandas as pd
 # plt.pie(grouped_df['StepTotal'][:15],labels=grouped_df['ActivityHour'][:15],autopct='%1.1f%%')
 # plt.title('Hourly Steps')
 # plt.show()
+# # def task4():
+# df=pd.read_csv('hourlySteps_merged.csv')
+# print(df.dtypes)
+
+# date = "4/12/2016"
+# list1 = df[df["ActivityHour"].str[:9] == date]
+# list2 = list1["StepTotal"].values.tolist()
+# format = str(list2)
+# plt.pie(list2, labels=list1, autopct=lambda p: "{:.0f}%".format(p))
+# plt.show()
+# df = pd.read_csv('hourlySteps_merged.csv')
+# print(df.dtypes)
+# df['ActivityHour'] = pd.to_datetime(df['ActivityHour'])
+# date = "2016-04-12"
+# list1 = df[df["ActivityHour"].dt.date == pd.to_datetime(date).date()].head(5)
+# list2 = list1["StepTotal"].values.tolist()
+
+# plt.figure(figsize=(10, 6))
+# plt.pie(list2, labels=list1["ActivityHour"].dt.strftime('%H:%M'), autopct='%1.1f%%')
+# plt.title('Hourly Steps on ' + date)
+# plt.show()
