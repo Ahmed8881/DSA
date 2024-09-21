@@ -43,6 +43,8 @@ def MatMul(A, B):
                 row.append(sum)
             result.append(row)
         return result
+    
+
 # if __name__ == "__main__":
     # Problem 1
     # A=[[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
@@ -76,4 +78,5 @@ def MatMul(A, B):
 # Driver fir mul
 A=[[2,3],[4,5]]
 B=[[1],[3]]
-print(MatMul(A,B))  
+print(MatMul(A,B))
+print(MatMulRecursive(A,B))
