@@ -7,7 +7,6 @@ print(df.dtypes)
 len=len(df.columns)
 names = df.columns
 for i in range(0,len-1):
-    
     plt.scatter(df[names[i]].tolist(), df[names[len-1]].tolist(), s=10, c='b', marker="s", label='first') 
 plt.show()
 # Solution 2
