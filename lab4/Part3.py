@@ -1,18 +1,28 @@
 
 def Max(input):
-    for i in range(0, len(input)-1):
-        if(input[i]>input[i+1]):
-            max=input[i]
-    return max
+    max_val = input[0]
+    for i in range(1, len(input)):
+        if input[i] > max_val:
+            max_val = input[i]
+    return max_val
 
 def CountingSort(input):
-    max_val = Max(input)
-    count = [0] * (max_val + 1)
-    for i in input:
-        count[i] += 1
-    output = []
-    for i in range(len(count)):
-        output.extend ([i] * count[i])
+    min_val = min(input)
+    max_val = max(input)
+    range_of_elements = max_val - min_val + 1
+    count = [0] * range_of_elements
+    output = [0] * len(input)
+
+    for i in range(len(input)):
+        count[input[i] - min_val] += 1
+
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+
+    for i in range(len(input) - 1, -1, -1):
+        output[count[input[i] - min_val] - 1] = input[i]
+        count[input[i] - min_val] -= 1
+
     return output
 
 def BucketSort(arr,n):
@@ -32,9 +42,10 @@ def BucketSort(arr,n):
     return arr
 
 
-A=[4,6,5,3,7,1]
+A=[-5, -10, 0, -3, 8, 5,  -1, 10] 
 print(CountingSort(A))
 # print(BucketSort(A,len(A)))
         
 
 
+      
