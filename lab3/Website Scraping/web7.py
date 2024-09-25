@@ -1,4 +1,4 @@
-import time  # Add this import to handle delay
+import time 
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -10,7 +10,7 @@ options = webdriver.ChromeOptions()
 driver = webdriver.Chrome(service=service, options=options)
 
 # Fetch webpage
-driver.get("https://www.whatmobile.com.pk/")  # Replace with actual URL
+driver.get("https://homeshopping.pk/")  # The actual URL to scrape
 
 # Wait for the page to load completely (adjust the sleep time if needed)
 time.sleep(5)  # 5 seconds delay
@@ -24,32 +24,30 @@ driver.quit()
 # Lists to store product details
 products = []
 prices = []
-usd_prices = []
 product_links = []
 image_urls = []
 
 # Extract product details
-for li in soup.find_all("li", class_="product"):
+for item in soup.find_all("div", class_="product-box"):
     # Find product name
-    name_tag = li.find("h4", class_="p4 biggertext")
-    name = name_tag.get_text(strip=True).replace("\n", " ")
+    name_tag = item.find("h5", class_="ProductDetails")
+    name = name_tag.get_text(strip=True) if name_tag else "N/A"
     
     # Find price in PKR
-    price = li.find("span", class_="PriceFont").get_text(strip=True)
-    
-    # Find USD price from title attribute in the <a> tag
-    usd_price = li.find("a")["title"].replace("Price USD ", "")
+    price_tag = item.find("div", class_="ActualPrice")
+    price = price_tag.get_text(strip=True) if price_tag else "N/A"
     
     # Find product link
-    link = li.find("a")["href"]
+    link_tag = item.find("a", href=True)
+    link = link_tag["href"] if link_tag else "N/A"
     
     # Find image URL
-    image_url = li.find("img")["src"]
+    img_tag = item.find("img", class_="img-responsive")
+    image_url = img_tag.get("data-src") or img_tag.get("src") if img_tag else "N/A"
     
     # Append product details
     products.append(name)
     prices.append(price)
-    usd_prices.append(usd_price)
     product_links.append(link)
     image_urls.append(image_url)
 
@@ -57,8 +55,7 @@ for li in soup.find_all("li", class_="product"):
 df = pd.DataFrame({
     "Product Name": products,
     "Price (PKR)": prices,
-    "Price (USD)": usd_prices,
     "Product Link": product_links,
     "Image URL": image_urls
 })
-df.to_csv("mobile-phones.csv", index=False, encoding="utf-8")
+df.to_csv("onlineshop.csv", index=False, encoding="utf-8")

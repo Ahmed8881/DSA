@@ -10,7 +10,7 @@ options = webdriver.ChromeOptions()
 driver = webdriver.Chrome(service=service, options=options)
 
 # Fetch webpage
-driver.get("https://www.whatmobile.com.pk/")  # Replace with actual URL
+driver.get("https://www.dvago.pk/")  # Replace with the actual URL
 
 # Wait for the page to load completely (adjust the sleep time if needed)
 time.sleep(5)  # 5 seconds delay
@@ -24,41 +24,41 @@ driver.quit()
 # Lists to store product details
 products = []
 prices = []
-usd_prices = []
 product_links = []
 image_urls = []
 
 # Extract product details
-for li in soup.find_all("li", class_="product"):
+for li in soup.find_all("li", class_="ProductCard_productListWrapper__WyYAq"):
     # Find product name
-    name_tag = li.find("h4", class_="p4 biggertext")
-    name = name_tag.get_text(strip=True).replace("\n", " ")
+    name_tag = li.find("p", class_="MuiTypography-root MuiTypography-body1 css-9l3uo3")
+    name = name_tag.get_text(strip=True).replace("\n", " ") if name_tag else "N/A"
     
-    # Find price in PKR
-    price = li.find("span", class_="PriceFont").get_text(strip=True)
-    
-    # Find USD price from title attribute in the <a> tag
-    usd_price = li.find("a")["title"].replace("Price USD ", "")
+    # Find price
+    price_tag = li.find("p", class_="ProductCard_salePrice___b0BY css-9l3uo3")
+    price = price_tag.get_text(strip=True) if price_tag else "N/A"
     
     # Find product link
-    link = li.find("a")["href"]
+    link_tag = li.find("a")
+    link = link_tag["href"] if link_tag else "N/A"
+    
+    # Complete link with base URL
+    full_link = f"https://www.dvago.pk{link}" if link != "N/A" else "N/A"
     
     # Find image URL
-    image_url = li.find("img")["src"]
+    img_tag = li.find("img")
+    image_url = img_tag["src"] if img_tag else "N/A"
     
     # Append product details
     products.append(name)
     prices.append(price)
-    usd_prices.append(usd_price)
-    product_links.append(link)
+    product_links.append(full_link)
     image_urls.append(image_url)
 
 # Save to CSV
 df = pd.DataFrame({
     "Product Name": products,
     "Price (PKR)": prices,
-    "Price (USD)": usd_prices,
     "Product Link": product_links,
     "Image URL": image_urls
 })
-df.to_csv("mobile-phones.csv", index=False, encoding="utf-8")
+df.to_csv("dvago-web.csv", index=False, encoding="utf-8")

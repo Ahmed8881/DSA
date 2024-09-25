@@ -2,7 +2,7 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import pandas as pd
 from selenium.webdriver.chrome.service import Service
-
+import time
 # Setup Chrome driver
 service = Service(executable_path="C:/Users/butta/chromedriver-win64/chromedriver-win64/chromedriver.exe")
 options = webdriver.ChromeOptions()

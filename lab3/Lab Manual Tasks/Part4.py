@@ -84,5 +84,5 @@ df = pd.DataFrame({
     "Semester": semesters
 })
 
-df.to_csv("Mydara.csv", index=False, encoding="utf-8")
+df.to_csv("eduko.csv", index=False, encoding="utf-8")
 driver.close()
