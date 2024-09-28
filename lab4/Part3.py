@@ -44,6 +44,7 @@ def BucketSort(arr,n):
 
 A=[-5, -10, 0, -3, 8, 5,  -1, 10] 
 print(CountingSort(A))
+print(BucketSort(A,len(A)))
 # print(BucketSort(A,len(A)))
         
 
