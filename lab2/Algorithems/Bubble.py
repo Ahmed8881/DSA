@@ -3,10 +3,14 @@ import time
 
 # Sort Function
 def BubbleSort(array,start,end):
+    check=False
     for i in range(start,end-1):
         for j in range(start,end-1-i):
             if(array[j]>array[j+1]):
+                check=True
                 array[j],array[j+1]=array[j+1],array[j]
+        if not check:
+            break
     return array
 
 if __name__=="__main__":
