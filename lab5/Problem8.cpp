@@ -72,6 +72,7 @@ int main() {
     while (true) {
         cout << "\nMenu:\n";
         cout << "1. PushBack\n";
+        
         cout << "2. Get element by index\n";
         cout << "3. Print array\n";
         cout << "4. Exit\n";
