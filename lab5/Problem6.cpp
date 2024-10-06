@@ -1,17 +1,17 @@
 #include <iostream>
 using namespace std;
 
-// Template class for ArrayList
+// Template class for AutoGrowingArray
 template <typename T>
-class ArrayList {
+class AutoGrowingArray {
 private:
     T* array; // Pointer to the array
     int size; // Current size of the array
     int capacity; // Current capacity of the array
 
-    // Function to grow the array by increasing its capacity by a factor of 1.5
+    // Function to grow the array by increasing capacity by 1
     void grow() {
-        capacity = capacity + capacity / 2; // Increase capacity by 1.5 times
+        capacity++;
         T* newArray = new T[capacity];
         for (int i = 0; i < size; i++) {
             newArray[i] = array[i];
@@ -21,13 +21,13 @@ private:
     }
 
 public:
-    // Constructor to initialize the array with size 0 and capacity 2
-    ArrayList() : size(0), capacity(2) {
+    // Constructor to initialize the array with size 0 and capacity 1
+    AutoGrowingArray() : size(0), capacity(1) {
         array = new T[capacity];
     }
 
     // Destructor to free allocated memory
-    ~ArrayList() {
+    ~AutoGrowingArray() {
         delete[] array;
     }
 
@@ -56,7 +56,7 @@ public:
     }
 
     // Friend function to print the array
-    friend ostream& operator<<(ostream& out, const ArrayList& other) {
+    friend ostream& operator<<(ostream& out, const AutoGrowingArray& other) {
         for (int i = 0; i < other.size; i++) {
             out << other.array[i] << " ";
         }
@@ -65,7 +65,7 @@ public:
 };
 
 int main() {
-    ArrayList<int> arr; // Create an instance of ArrayList
+    AutoGrowingArray<int> arr; // Create an instance of AutoGrowingArray
     int choice, value, index;
 
     // Menu-driven program to demonstrate the functionalities
@@ -77,23 +77,27 @@ int main() {
         cout << "4. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
+        if(choice==1){
+                cout << "Enter value to push: ";
+                cin >> value;
+                arr.PushBack(value);
+        }
+        if(choice==2){
 
-        if (choice == 1) {
-            cout << "Enter value to push: ";
-            cin >> value;
-            arr.PushBack(value);
-        } else if (choice == 2) {
             cout << "Enter index: ";
-            cin >> index;
-           
+                cin >> index;
                 cout << "Element at index " << index << " is " << arr[index] << endl;
-          
-        } else if (choice == 3) {
+        }
+        if(choice==3){
             cout << "Array: " << arr << endl;
-        } else if (choice == 4) {
+        }
+        if(choice==4){
             return 0;
-        } else {
+        }
+        if(choice<1 || choice>4){
             cout << "Invalid choice. Try again.\n";
         }
+
+        
     }
 }
