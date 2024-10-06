@@ -27,7 +27,7 @@ def Average(numbers):
     return sum / count if count != 0 else 0
 
 if __name__ == "__main__":
-    print("List with negatives: " + str(numbers))
+    print("List : " + str(numbers))
     numbers = remove_neg_num(numbers)
     print("List after removing negatives: " + str(numbers))
 

@@ -64,37 +64,37 @@ public:
     }
 };
 
-int main() {
-    ArrayList<int> arr; // Create an instance of ArrayList
-    int choice, value, index;
+// int main() {
+//     ArrayList<int> arr; // Create an instance of ArrayList
+//     int choice, value, index;
 
-    // Menu-driven program to demonstrate the functionalities
-    while (true) {
-        cout << "\nMenu:\n";
-        cout << "1. PushBack\n";
-        
-        cout << "2. Get element by index\n";
-        cout << "3. Print array\n";
-        cout << "4. Exit\n";
-        cout << "Enter your choice: ";
-        cin >> choice;
+//     // Menu-driven program to demonstrate the functionalities
+//     while (true) {
+//         cout << "\nMenu:\n";
+//         cout << "1. PushBack\n";
 
-        if (choice == 1) {
-            cout << "Enter value to push: ";
-            cin >> value;
-            arr.PushBack(value);
-        } else if (choice == 2) {
-            cout << "Enter index: ";
-            cin >> index;
+//         cout << "2. Get element by index\n";
+//         cout << "3. Print array\n";
+//         cout << "4. Exit\n";
+//         cout << "Enter your choice: ";
+//         cin >> choice;
+
+//         if (choice == 1) {
+//             cout << "Enter value to push: ";
+//             cin >> value;
+//             arr.PushBack(value);
+//         } else if (choice == 2) {
+//             cout << "Enter index: ";
+//             cin >> index;
            
-                cout << "Element at index " << index << " is " << arr[index] << endl;
+//                 cout << "Element at index " << index << " is " << arr[index] << endl;
           
-        } else if (choice == 3) {
-            cout << "Array: " << arr << endl;
-        } else if (choice == 4) {
-            return 0;
-        } else {
-            cout << "Invalid choice. Try again.\n";
-        }
-    }
-}
+//         } else if (choice == 3) {
+//             cout << "Array: " << arr << endl;
+//         } else if (choice == 4) {
+//             return 0;
+//         } else {
+//             cout << "Invalid choice. Try again.\n";
+//         }
+//     }
+// }

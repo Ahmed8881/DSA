@@ -64,40 +64,40 @@ public:
     }
 };
 
-int main() {
-    AutoGrowingArray<int> arr; // Create an instance of AutoGrowingArray
-    int choice, value, index;
+// int main() {
+//     AutoGrowingArray<int> arr; // Create an instance of AutoGrowingArray
+//     int choice, value, index;
 
-    // Menu-driven program to demonstrate the functionalities
-    while (true) {
-        cout << "\nMenu:\n";
-        cout << "1. PushBack\n";
-        cout << "2. Get element by index\n";
-        cout << "3. Print array\n";
-        cout << "4. Exit\n";
-        cout << "Enter your choice: ";
-        cin >> choice;
-        if(choice==1){
-                cout << "Enter value to push: ";
-                cin >> value;
-                arr.PushBack(value);
-        }
-        if(choice==2){
+//     // Menu-driven program to demonstrate the functionalities
+//     while (true) {
+//         cout << "\nMenu:\n";
+//         cout << "1. PushBack\n";
+//         cout << "2. Get element by index\n";
+//         cout << "3. Print array\n";
+//         cout << "4. Exit\n";
+//         cout << "Enter your choice: ";
+//         cin >> choice;
+//         if(choice==1){
+//                 cout << "Enter value to push: ";
+//                 cin >> value;
+//                 arr.PushBack(value);
+//         }
+//         if(choice==2){
 
-            cout << "Enter index: ";
-                cin >> index;
-                cout << "Element at index " << index << " is " << arr[index] << endl;
-        }
-        if(choice==3){
-            cout << "Array: " << arr << endl;
-        }
-        if(choice==4){
-            return 0;
-        }
-        if(choice<1 || choice>4){
-            cout << "Invalid choice. Try again.\n";
-        }
+//             cout << "Enter index: ";
+//                 cin >> index;
+//                 cout << "Element at index " << index << " is " << arr[index] << endl;
+//         }
+//         if(choice==3){
+//             cout << "Array: " << arr << endl;
+//         }
+//         if(choice==4){
+//             return 0;
+//         }
+//         if(choice<1 || choice>4){
+//             cout << "Invalid choice. Try again.\n";
+//         }
 
         
-    }
-}
+//     }
+// }

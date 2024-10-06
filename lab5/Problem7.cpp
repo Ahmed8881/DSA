@@ -64,38 +64,38 @@ public:
     }
 };
 
-int main() {
-    Vector<int> vec; // Create an instance of Vector
-    int choice, value, index;
+// int main() {
+//     Vector<int> vec; // Create an instance of Vector
+//     int choice, value, index;
 
-    // Menu-driven program to demonstrate the functionalities
-    while (true) {
-        cout << "\nMenu:\n";
-        cout << "1. PushBack\n";
-        cout << "2. Get element by index\n";
-        cout << "3. Print vector\n";
-        cout << "4. Exit\n";
-        cout << "Enter your choice: ";
-        cin >> choice;
+//     // Menu-driven program to demonstrate the functionalities
+//     while (true) {
+//         cout << "\nMenu:\n";
+//         cout << "1. PushBack\n";
+//         cout << "2. Get element by index\n";
+//         cout << "3. Print vector\n";
+//         cout << "4. Exit\n";
+//         cout << "Enter your choice: ";
+//         cin >> choice;
 
-        if (choice == 1) {
-            cout << "Enter value to push: ";
-            cin >> value;
-            vec.PushBack(value);
-        } else if (choice == 2) {
-            cout << "Enter index: ";
-            cin >> index;
-            try {
-                cout << "Element at index " << index << " is " << vec[index] << endl;
-            } catch (const out_of_range& e) {
-                cout << e.what() << endl;
-            }
-        } else if (choice == 3) {
-            cout << "Vector: " << vec << endl;
-        } else if (choice == 4) {
-            return 0;
-        } else {
-            cout << "Invalid choice. Try again.\n";
-        }
-    }
-}
+//         if (choice == 1) {
+//             cout << "Enter value to push: ";
+//             cin >> value;
+//             vec.PushBack(value);
+//         } else if (choice == 2) {
+//             cout << "Enter index: ";
+//             cin >> index;
+//             try {
+//                 cout << "Element at index " << index << " is " << vec[index] << endl;
+//             } catch (const out_of_range& e) {
+//                 cout << e.what() << endl;
+//             }
+//         } else if (choice == 3) {
+//             cout << "Vector: " << vec << endl;
+//         } else if (choice == 4) {
+//             return 0;
+//         } else {
+//             cout << "Invalid choice. Try again.\n";
+//         }
+//     }
+// }
