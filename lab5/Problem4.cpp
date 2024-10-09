@@ -49,9 +49,9 @@ void printVector(vector<int>& vec){
 void reverseVector(vector<int>& vec) {
     int n = vec.size();
     for (int i = 0; i < n / 2; i++) {
-        int temp = vec[i];
+        int var = vec[i];
         vec[i] = vec[n - i - 1];
-        vec[n - i - 1] = temp;
+        vec[n - i - 1] = var;
     }
 }
 

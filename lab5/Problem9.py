@@ -1,31 +1,52 @@
-# List to hold the names of students
 students = []
 
-# Function to add a student
 def add_student(name):
+    message = name + " is enrolled."
     students.append(name)
-    print(f"{name} has been added to the list.")
+    print(message)
 
-# Function to remove a student
 def remove_student(name):
     if name in students:
         students.remove(name)
-        print(f"{name} has been removed from the list.")
+        message = name + " has been removed ."
+        print(message)
     else:
-        print(f"{name} is not in the list.")
+        message = name + " is not found."
+        print(message)
 
-# Function to display all students
 def display_students():
     if students:
-        print("The students in the class are:")
+        print("The students in class are:")
         for student in students:
             print(student)
     else:
-        print("No students in the list.")
+        print("No students found.")
 
-# Example usage
-add_student("John")
-add_student("Alice")
-display_students()
-remove_student("John")
-display_students()
+def print_options():
+    print("1 - Add Student")
+    print("2 - Remove Student")
+    print("3 - Display All Students")
+    print("4 - Exit")
+
+def main():
+    while True:
+        print_options()
+        choice = input("Enter your choice : ")
+
+        if choice == '1':
+            name = input("Enter the name of the student to add: ")
+            add_student(name)
+        elif choice == '2':
+            name = input("Enter the name of the student to remove: ")
+            remove_student(name)
+        elif choice == '3':
+            display_students()
+        elif choice == '4':
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid choice, please enter a valid option.")
+
+
+
+main()

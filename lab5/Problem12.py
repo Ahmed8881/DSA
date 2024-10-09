@@ -33,8 +33,7 @@ if __name__ == "__main__":
 
     maximum = Maximum(numbers)
     minimum = Minimum(numbers)
-    print(f"Maximum value: {maximum}")
-    print(f"Minimum value: {minimum}")
-
     average = Average(numbers)
-    print(f"Average:{average}")
+    print("Maximum value: " + str(maximum))
+    print("Minimum value: " + str(minimum))
+    print("Average: " + str(average))
