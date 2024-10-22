@@ -79,7 +79,6 @@ def RadixSort(array):
     while maximum // place > 0:
         CountSortForRadix(array, place)
         place *= 10
-
 def CountSortForRadix(array, place):
     count_arr = [0] * 10
     output_arr = [0] * len(array)
@@ -100,10 +99,31 @@ def CountSortForRadix(array, place):
     
     for i in range(len(array)):
         array[i] = output_arr[i]
-
+def QuickSort(array,start,end):
+    if start<end:
+        q=Partition(array,start,end)
+        QuickSort(array,start,q-1)
+        QuickSort(array,q+1,end)   
+def Partition(array,start,end):
+    Pivot=array[end]
+    i=start-1
+    j=start
+    for j in range(start ,end):
+        if(array[j]<=Pivot):
+            i+=1
+            array[i],array[j]=array[j],array[i]
+    array[i+1],array[end]=array[end],array[i+1]
+    return i+1
+def BucketSort(array):
+    n=len(array)
+    Bucket=[[] for _ in range(n)]
+    sortedArray=[]
+    for i in range(n):
+        index=int(n*array[i])
+        Bucket[index].append(array[i])
+    for i in range(n):
+       Bucket[i]= InsertionSort(Bucket[i])
+    for i in range(n):
+        sortedArray.extend(Bucket[i])
+    return sortedArray      
 if __name__ == "__main__":
-    array = [170, 45, 75, 90, 802, 24, 2, 66]
-    print("Original array:", array)
-    RadixSort(array)
-    print("Sorted array:", array)
- 
